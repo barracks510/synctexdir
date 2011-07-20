@@ -1,9 +1,9 @@
 /* 
-Copyright (c) 2008, 2009, 2010, 2011 jerome DOT laurens AT u-bourgogne DOT fr
+Copyright (c) 2011 jerome DOT laurens AT u-bourgogne DOT fr
 
 This file is part of the SyncTeX package.
 
-Latest Revision: Fri Apr 15 19:10:57 UTC 2011
+Latest Revision: Wed Jun 30 11:00:00 UTC 2011
 
 License:
 --------
@@ -44,15 +44,14 @@ If you include or use a significant part of the synctex package into a software,
 I would appreciate to be listed as contributor and see "SyncTeX" highlighted.
 
 Version 1
-Thu Jun 19 09:39:21 UTC 2008
+Thu Jun 30 11:00:00 UTC 2011
 
 */
 
-#    include "pdftexd.h"
+#include "ptexd.h"
 
-/*   We observe pdfoutputvalue in order to determine whether output mode is
- *   pdf or dvi.
- *   We will assume that pdf_output_value equals pdf_output before entering
- *   the synctex_sheet function below, in the including synctex.c file.  */
-#    define SYNCTEX_OFFSET_IS_PDF (pdfoutputvalue>0)
-#    define SYNCTEX_OUTPUT ((pdfoutputvalue>0)?"pdf":"dvi")
+#define box_node_size (8+synchronization_field_size)
+
+#define rule_node 3
+#define glue_node 12
+#define kern_node 13
